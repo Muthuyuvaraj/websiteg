@@ -4,10 +4,8 @@ import React from 'react';
 
 export default function CompanySection() {
   return (
-    <section>
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-primary mt-44">
-            Data Importation 
-            </h1>
+    <section className='bg-[#faf9f9]'>
+        
         <section>
          
           <section className="flex flex-col md:flex-row w-full h-screen -mt-44" >
@@ -23,11 +21,20 @@ export default function CompanySection() {
             </div>
 
             {/* Right: Image/Video Placeholder */}
-            <div className="mt-72 md:w-30 h-50 bg-gray-300" />
+            <img
+                src="/images/dataim.jpeg"
+                alt="Descriptive Alt Text"
+                className="mt-72 w-[420px] h-[300px] object-cover"
+              />
+
         </section>
         <section className="flex flex-col md:flex-row w-full h-screen -mt-44" >
             {/* Left: Text Content */}
-            <div className="mt-72 md:w-30 h-50 bg-gray-300 ml-40" />
+            <img
+                src="/images/db.jpeg"
+                alt="Descriptive Alt Text"
+                className="mt-44 ml-24 w-[420px] h-[300px] object-cover"
+              />
             {/* Right: Image/Video Placeholder */}
             <div className="w-full md:w-1/2 text-white p-10 md:p-20 flex flex-col justify-center ml-12">
                 <h2 className="text-4xl md:text-4xl font-bold mb-6 leading-tight text-primary -mt-20">

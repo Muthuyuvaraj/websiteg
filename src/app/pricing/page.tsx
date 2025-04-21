@@ -1,150 +1,112 @@
 'use client';
 
-import React from 'react';
+import { useState } from 'react';
 import NavBar from '@/components/common/NavBar';
-import Footer from '@/components/common/FooterSection';
+import FooterSection from '@/components/common/FooterSection';
+import { CheckCircle } from 'lucide-react';
+import clsx from 'clsx';
 
-const plans = {
-  reportMonitoring: [
-    {
-      title: 'Tier A ',
-      price: '$49/mo',
-      features: ['reporting ' ,' monitoring of 5 Products'],
-
-    },
-    {
-      title: 'Tier B: ',
-      price: '$99/mo',
-      features: ['reporting ', 'monitoring of 30 Products'],
-      highlighted: true,
-    },
-  ],
-  fullService: [
-    {
-      title: 'Tier AA: ',
-      price: '$149/mo',
-      features: ['reporting ', 'monitoring of 5 Products', 'full report of project'],
-    },
-    {
-      title: 'Tier MM: ',
-      price: '$249/mo',
-      features:['reporting ', 'monitoring of 40 Products', 'full report ' ,'2 specialized reports ', 'groupings of up to 10 products '],
-      highlighted: true,
-    },
-    {
-      title: 'Tier ZZ',
-      price: 'Contact Us',
-      features: 
-      ['reporting ',
-        'monitoring of entire catalogue', 
-        'full general report ', 
-        'unlimited specific reports upon request '],
-    },
-  ],
-};
+const plans = [
+  {
+    name: 'Free',
+    price: { monthly: 0, yearly: 0 },
+    features: [
+      '2 auto tracking',
+      '7 Day transaction clearing',
+      '24/7 Customer support',
+      'All widget access',
+    ],
+  },
+  {
+    name: 'Advanced',
+    popular: true,
+    price: { monthly: 150, yearly: 1200 },
+    features: [
+      'AI Advisor',
+      'Unlimited auto tracking',
+      '1 Day transaction clearing',
+      'Priority customer support',
+      'All Widget Access',
+    ],
+  },
+  {
+    name: 'Team',
+    price: { monthly: 180, yearly: 1440 },
+    features: [
+      'AI Advisor',
+      'Unlimited auto tracking',
+      '1 Day transaction clearing',
+      'Priority customer support',
+      'All Widget Access',
+    ],
+  },
+];
 
 export default function PricingPage() {
+  const [billing, setBilling] = useState<'monthly' | 'yearly'>('monthly');
+
   return (
-    <main
-      className="min-h-screen bg-cover"
-      style={{ backgroundImage: "url('/images/bg.png')" }}
-    >
+    <main className="bg-[#faf9f9] min-h-screen">
       <NavBar />
+      <div className="max-w-6xl mx-auto px-4 py-16 text-center">
+        <h2 className="text-4xl font-bold">Choose your plan</h2>
+        <p className="text-gray-500 mt-2">7 Days free trial. No credit card required.</p>
 
-      <div className="min-h-screen bg-purple-200/50 text-gray-800 px-6 py-16">
-        <div className="max-w-7xl mx-auto space-y-20">
+        {/* Billing Toggle */}
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <span>Bill Monthly</span>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              onChange={(e) => setBilling(e.target.checked ? 'yearly' : 'monthly')}
+            />
+            <div className="w-11 h-6 bg-gray-300 peer-checked:bg-purple-600 rounded-full transition-colors duration-300" />
+            <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-300 peer-checked:translate-x-5" />
+          </label>
+          <span>Bill Yearly</span>
+        </div>
 
-          {/* Section 1: Report & Monitoring */}
-          <section>
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Report & Monitoring
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {plans.reportMonitoring.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`rounded-xl border p-8 shadow-sm transition-transform transform hover:scale-[1.02] ${
-                    plan.highlighted
-                      ? 'bg-white border-black shadow-lg'
-                      : 'bg-white border-gray-200'
-                  }`}
-                >
-                  <h3 className="text-2xl font-semibold mb-2">{plan.title}</h3>
-                  <p className="text-3xl font-bold text-black mb-4">
-                    {plan.price}
-                  </p>
-                  <ul className="space-y-2 text-sm mb-6">
-                    {plan.features.map((f, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full py-2 px-4 rounded-lg bg-black text-white font-semibold hover:bg-gray-800 transition">
-                    Choose Plan
-                  </button>
+        {/* Pricing Cards */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.map((plan, idx) => (
+            <div
+              key={idx}
+              className={clsx(
+                'rounded-2xl border p-6 text-left relative bg-white',
+                plan.popular && 'border-purple-500 shadow-lg scale-[1.03]'
+              )}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  MOST POPULAR
                 </div>
-              ))}
+              )}
+              <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+              <div className="flex items-end mb-6">
+                <span className="text-4xl font-bold text-purple-500">
+                  ${plan.price[billing]}
+                </span>
+                <span className="ml-2 text-gray-500 text-lg">
+                  / {billing === 'monthly' ? 'month' : 'year'}
+                </span>
+              </div>
+              <ul className="space-y-3 mb-6">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-purple-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full bg-purple-400 text-white py-2 px-4 rounded-xl hover:bg-purple-500 transition">
+                Purchase Plan
+              </button>
             </div>
-          </section>
-
-          {/* Section 2: Full Service */}
-          <section>
-            <h2 className="text-4xl font-bold text-center mb-12">Full Service</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {plans.fullService.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`rounded-xl border p-8 shadow-sm transition-transform transform hover:scale-[1.02] ${
-                    plan.highlighted
-                      ? 'bg-black text-white shadow-xl border-black'
-                      : 'bg-white border-gray-200'
-                  }`}
-                >
-                  <h3 className="text-2xl font-semibold mb-2">{plan.title}</h3>
-                  <p
-                    className={`text-3xl font-bold mb-4 ${
-                      plan.highlighted ? 'text-white' : 'text-black'
-                    }`}
-                  >
-                    {plan.price}
-                  </p>
-                  <ul
-                    className={`space-y-2 text-sm mb-6 ${
-                      plan.highlighted ? 'text-gray-200' : 'text-gray-700'
-                    }`}
-                  >
-                    {plan.features.map((f, i) => (
-                      <li key={i} className="flex items-start">
-                        <span
-                          className={`mr-2 ${
-                            plan.highlighted ? 'text-green-400' : 'text-green-600'
-                          }`}
-                        >
-                          ✓
-                        </span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    className={`w-full py-2 px-4 rounded-lg font-semibold transition ${
-                      plan.highlighted
-                        ? 'bg-white text-black hover:bg-gray-100'
-                        : 'bg-black text-white hover:bg-gray-800'
-                    }`}
-                  >
-                    {plan.price === 'Contact Us' ? 'Get a Quote' : 'Choose Plan'}
-                  </button>
-                </div>
-              ))}
-            </div>
-          </section>
+          ))}
         </div>
       </div>
-
-      <Footer />
+      <FooterSection />
     </main>
   );
 }

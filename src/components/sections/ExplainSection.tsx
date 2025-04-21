@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 
-// Step Data
 const steps = [
   {
     title: 'Data-Driven Insights',
@@ -13,7 +12,7 @@ const steps = [
   {
     title: 'Collaboration Tools',
     description:
-      'Second explanation comes here. PEnable packaging designers, brands, and suppliers to connect and collaborate on sustainable packaging projects with scenario planning and improvement opportunities',
+      'Enable packaging designers, brands, and suppliers to connect and collaborate on sustainable packaging projects with scenario planning and improvement opportunities',
     image: '/images/ourstory/collaboration-tools.jpeg',
   },
   {
@@ -24,7 +23,6 @@ const steps = [
   {
     title: 'Design Optimization',
     description: 'Provide tools to analyze and optimize packaging designs for sustainability, considering factors like material usage, recyclability, and carbon efficiency across the product.',
-
     image: '/images/ourstory/DesignOptimization.jpeg',
   },
   {
@@ -50,36 +48,37 @@ const steps = [
 ];
 
 export default function ExplainSection() {
-  const [activeIndex, setActiveIndex] = useState(0); // Default to first
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col md:flex-row gap-10 px-8 py-16 ml-72">
-      {/* Left Section: Steps */}
+    <div className="flex flex-col md:flex-row gap-10 px-6 py-16 md:ml-28 items-center md:items-start text-center md:text-left">
+      
+      {/* Left Section */}
       <div className="w-full md:w-1/2">
-        <h2 className="text-5xl font-medium mb-8">Value Proposition</h2>
-        <div className="flex flex-col gap-6">
+        <h2 className="text-2xl md:text-4xl font-medium mb-8">Value Proposition</h2>
+        <div className="flex flex-col gap-6 items-center md:items-start">
           {steps.map((step, index) => (
             <div
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`cursor-pointer border-l-4 pl-4 transition-all ${
+              className={`cursor-pointer border-l-4 pl-4 w-full transition-all ${
                 activeIndex === index
-                  ? 'border-black text-black'
+                  ? 'border-purple-500 text-black'
                   : 'border-transparent text-gray-400'
               }`}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 justify-center md:justify-start">
                 <span
                   className={`text-sm w-6 h-6 rounded-full flex items-center justify-center border ${
                     activeIndex === index
-                      ? 'bg-black text-white'
-                      : 'bg-purple-200 text-gray-400'
+                      ? 'bg-purple-500 text-white'
+                      : 'bg-white text-gray-400'
                   }`}
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span
-                  className={`font-semibold ${
+                  className={`font-medium ${
                     activeIndex === index ? 'text-black' : 'text-gray-400'
                   }`}
                 >
@@ -87,19 +86,19 @@ export default function ExplainSection() {
                 </span>
               </div>
               {activeIndex === index && (
-                <p className="mt-2 text-sm text-left text-gray-600">{step.description}</p>
+                <p className="mt-2 text-sm text-secondary">{step.description}</p>
               )}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right Section: Dynamic Image */}
-      <div className="w-30  flex justify-center items-center">
+      {/* Right Section */}
+      <div className="w-full flex justify-center items-center">
         <img
           src={steps[activeIndex].image}
           alt={`Step ${activeIndex + 1}`}
-          className="max-w-full h-auto rounded-lg shadow-md"
+          className="w-[70%] sm:w-1/2 md:w-3/4 lg:w-3/5 h-auto rounded-lg shadow-md"
         />
       </div>
     </div>

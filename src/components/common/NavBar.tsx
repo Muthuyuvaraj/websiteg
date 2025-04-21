@@ -2,94 +2,142 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
-import MainButton from "./MainButton";
+import { ChevronDown, Menu, X } from "lucide-react";
 
-function NavBar() {
-  const [menu, setMenu] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+const NavBar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-  const toggleMenu = () => setMenu(!menu);
+  const dropdownSection = {
+    title: "Offering & Support",
+    items: [
+      { label: "Data Importation", href: "/offering/DataImportation" },
+      { label: "Platform Analysis", href: "/offering/PlatformAnalysis" },
+    ],
+  };
+
+  const flatSections = [
+    { title: "Our Story", href: "/our-story" },
+    { title: "Pricing", href: "/pricing" },
+    { title: "Insights", href: "/Insights" },
+  ];
 
   return (
-    <div className="md:sticky md:top-0 z-50 w-full">
-      {/* Desktop */}
-      <div className="hidden lg:block bg-white shadow p-4">
-        <div className="flex justify-between mx-8 items-center">
-          <Link href="/">
-            <img src="/images/logo.png" alt="logo" className="h-10" />
+    <nav className="bg-white shadow-md sticky top-0 z-50 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center w-full">
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <img src="/images/logo.png" alt="Logo" className="h-[65px] w-[95px] -ml-3" />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex flex-1 justify-center gap-6 xl:gap-10">
+          {/* Our Story */}
+          <Link
+            href={flatSections[0].href}
+            className="font-medium hover:text-primary"
+          >
+            {flatSections[0].title}
           </Link>
-          <div className="flex gap-8 text-[16px] items-center">
-            <Link href="/our-story" className="hover:text-primary font-medium">
-              Our Story
-            </Link>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              <p className="hover:text-primary font-medium cursor-pointer">
-                Offering & Support
-              </p>
-
-              {dropdownOpen && (
-                <div className="absolute bg-white shadow-md rounded-md mt-2 p-2 w-48 z-50">
-                  <Link href="/offering/DataImportation" className="block px-4 py-2 hover:bg-gray-100">
-                     Data Importation
-                  </Link>
-                  <Link href="/offering/PlatformAnalysis" className="block px-4 py-2 hover:bg-gray-100">
-                    Platform Analysis
-                  </Link>
-                </div>
-              )}
+          {/* Dropdown: Offering & Support */}
+          <div className="relative group">
+            <div className="flex items-center gap-1 cursor-pointer font-medium hover:text-primary">
+              {dropdownSection.title}
+              <ChevronDown size={16} />
             </div>
-
-            <Link href="/pricing" className="hover:text-primary font-medium">Pricing</Link>
-            <Link href="/insights" className="hover:text-primary font-medium">Insights</Link>
-            <MainButton text="Request a quote" />
+            <div className="absolute left-0 mt-2 min-w-[10rem] max-w-[16rem] bg-white shadow-md rounded-md py-2 z-50 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
+              {dropdownSection.items.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="block px-4 py-2 hover:bg-gray-100 text-sm truncate"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
+
+          {/* Other flat links */}
+          {flatSections.slice(1).map(({ title, href }) => (
+            <Link
+              key={title}
+              href={href}
+              className="font-medium hover:text-primary"
+            >
+              {title}
+            </Link>
+          ))}
+        </div>
+
+        {/* Request a Demo Button */}
+        <div className="hidden lg:block">
+          <button className="bg-primary text-white px-4 xl:px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition">
+            Request a Demo
+          </button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden">
+          {mobileMenu ? (
+            <X className="h-6 w-6 cursor-pointer" onClick={() => setMobileMenu(false)} />
+          ) : (
+            <Menu className="h-6 w-6 cursor-pointer" onClick={() => setMobileMenu(true)} />
+          )}
         </div>
       </div>
 
-      {/* Mobile */}
-      <div className="block lg:hidden fixed top-0 w-full z-[999] bg-white py-4 shadow">
-        <div className="flex justify-between mx-4">
-          <Link href="/">
-            <img src="/images/logo.png" alt="logo" className="h-8" />
+      {/* Mobile Dropdown */}
+      {mobileMenu && (
+        <div className="lg:hidden bg-white shadow-md px-4 py-4 space-y-4">
+          {/* Our Story first */}
+          <Link
+            href={flatSections[0].href}
+            onClick={() => setMobileMenu(false)}
+            className="block font-medium py-2"
+          >
+            {flatSections[0].title}
           </Link>
-          <div>
-            {menu ? (
-              <X className="cursor-pointer" onClick={toggleMenu} />
-            ) : (
-              <img
-                src="/images/hamburger.png"
-                alt="menu"
-                className="cursor-pointer h-6"
-                onClick={toggleMenu}
-              />
-            )}
-          </div>
-        </div>
 
-        {menu && (
-          <div className="mt-4 flex flex-col gap-4 px-4">
-            <Link href="/our-story" onClick={() => setMenu(false)}>
-              Our Story
+          {/* Dropdown: Offering & Support */}
+          <details className="group">
+            <summary className="flex items-center justify-between cursor-pointer font-medium py-2">
+              {dropdownSection.title}
+              <ChevronDown size={16} />
+            </summary>
+            <div className="ml-4 mt-2 flex flex-col gap-1 text-sm">
+              {dropdownSection.items.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setMobileMenu(false)}
+                  className="py-1"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </details>
+
+          {/* Remaining links */}
+          {flatSections.slice(1).map(({ title, href }) => (
+            <Link
+              key={title}
+              href={href}
+              onClick={() => setMobileMenu(false)}
+              className="block font-medium py-2"
+            >
+              {title}
             </Link>
-            <Link href="/offering/Data Importation " onClick={() => setMenu(false)}>
-              Data Importation 
-            </Link>
-            <Link href="/offering/Platform Analysis " onClick={() => setMenu(false)}>
-               Platform Analysis 
-            </Link>
-            
-            <MainButton text="Request a quote" />
-          </div>
-        )}
-      </div>
-    </div>
+          ))}
+
+          <button className="bg-primary text-white px-4 py-2 rounded-md font-medium w-full">
+            Request a Demo
+          </button>
+        </div>
+      )}
+    </nav>
   );
-}
+};
 
 export default NavBar;

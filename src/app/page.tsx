@@ -19,25 +19,22 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main
-      className="min-h-screen bg-cover"
-      style={{ backgroundImage: "url('/images/bg.png')" }}
-    >
+    <main className='bg-[#faf9f9] ' >
       <NavBar />
 
       {/* Video Section */}
-      <section className="h-screen flex justify-center items-center mt-32 mb-40">
-        <video
-          className="w-full max-w-5xl rounded-lg shadow-lg"
-          controls
-          autoPlay
-          loop
-          muted
-        >
-          <source src="/videos/sample.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </section>
+      <section className="h-screen flex justify-center items-center mb-40">
+  <div className="w-full max-w-5xl aspect-video rounded-lg shadow-lg overflow-hidden">
+    <iframe
+      className="w-full h-full"
+      src="https://www.youtube.com/embed/zl0ir1k2-Xg?autoplay=1&mute=1&loop=1&playlist=zl0ir1k2-Xg"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</section>
 
       {/* Popup Modal */}
       {showPopup && (

@@ -4,8 +4,8 @@ import CompanySection from "./CompanySection";
 
 export default function OurStory() {
   return (
-    <main className="min-h-screen  bg-cover "
-    style={{ backgroundImage: "url('/images/bg.png')" }}>
+    <main className="bg-[#faf9f9]  "
+    >
       <NavBar />
       <CompanySection />
       <Footer />

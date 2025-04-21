@@ -7,7 +7,7 @@ function FooterSection() {
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8">
     {/* Logo */}
     <div className="md:col-span-1">
-      <h2 className="text-2xl font-bold">gCurv</h2>
+      <h2 className="text-2xl font-bold">packgine</h2>
     </div>
 
     {/* Footer Links */}
@@ -25,7 +25,7 @@ function FooterSection() {
 
   {/* Bottom row */}
   <div className="mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 border-t border-gray-700 pt-4">
-    <p>© 2025 gCurv, Inc. All rights reserved.</p>
+    <p>© 2025 packgine, Inc. All rights reserved.</p>
     <div className="flex space-x-4 mt-2 md:mt-0">
       <a href="#" aria-label="LinkedIn">
         <i className="fab fa-linkedin text-white" />

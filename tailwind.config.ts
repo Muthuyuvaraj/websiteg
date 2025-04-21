@@ -20,8 +20,12 @@ const config = {
     extend: {
       colors: {
         primary: "#060606",
-        secondary: "#6A6E72",
-        third: "",
+        secondary: "#b9bbbd",
+        third: "#7C3AED",
+      },
+      extend: {
+        backgroundColor: ['peer-checked'],
+        translate: ['peer-checked'],
       },
       inset: {
         '5': '5%',
@@ -49,6 +53,7 @@ const config = {
         
         '5': '5%',
         '10': '10%',
+        
         '15': '15%',
         '20': '20%',
         '25': '25%',
@@ -71,6 +76,7 @@ const config = {
       width: {
         '5': '5%',
         '10': '10%',
+        
         '15': '15%',
         '20': '20%',
         '25': '25%',
@@ -90,6 +96,9 @@ const config = {
         '95': '95%',
         '100': '100%',
       },
+      leading:{
+        leading:[1.8],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -105,7 +114,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontSize:{
-        h1:"76px",
+        h1:"60px",
         h2:"50px",
         
       }
