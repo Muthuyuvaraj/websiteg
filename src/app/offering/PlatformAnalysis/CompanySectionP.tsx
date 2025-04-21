@@ -15,7 +15,7 @@ export default function CompanySectionP() {
                 Product Benchmarking
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                gCurv leverages our vast packaging database to help our customers compare themselves against industry leaders and competitors
+                packgine leverages our vast packaging database to help our customers compare themselves against industry leaders and competitors
                 </p>
             </div>
             {/* Right: Image/Video Placeholder */}
@@ -38,7 +38,7 @@ export default function CompanySectionP() {
                  Product-by-Product Analysis
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                    gCurv can provide our customers with supplier specific, robust environmental Impact analyses of their individual components products
+                packgine can provide our customers with supplier specific, robust environmental Impact analyses of their individual components products
                 </p> 
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
                 Customers can analyze their recyclability, regulatory compliance, and Recycled content and carbon footprint.
@@ -52,7 +52,7 @@ export default function CompanySectionP() {
                 Portfolio reports and heat mapping
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                 gCurv platform has the unique ability to provide an overarching analysis of an entire portfolio that identifies common areas for improvement and strengths
+                packgine platform has the unique ability to provide an overarching analysis of an entire portfolio that identifies common areas for improvement and strengths
                 </p>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
                 This points our client in the direction of where they should focus their improvement efforts
@@ -81,7 +81,7 @@ export default function CompanySectionP() {
                  Regulatory and Retailer guideline compliance
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                 gCurv notifies our customer when there are incoming packaging regulations that may impact their current-state packaging
+                packgine notifies our customer when there are incoming packaging regulations that may impact their current-state packaging
                 </p> 
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
                  The algorithm has the ability to check whether or not current packaging complies with regulatory requirements and applicable retailer guidelines
@@ -98,7 +98,7 @@ export default function CompanySectionP() {
                 Our platform has the ability to suggests a bespoke set of packaging solutions to our customers based on their singular product analyses and their portfolio reports
                 </p>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                The gCurv team then connects our customers with those packaging solution providers to ensure a true beginning to end solution.
+                The packgine team then connects our customers with those packaging solution providers to ensure a true beginning to end solution.
                 </p>
             </div>
             {/* Right: Image/Video Placeholder */}

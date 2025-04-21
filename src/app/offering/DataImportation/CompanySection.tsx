@@ -15,7 +15,7 @@ export default function CompanySection() {
                 Ability to organize, clean, and collect data from any format
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                gCurv saves our customer time and resources by automating this process without requiring expertise to initiate the process
+                packgine saves our customer time and resources by automating this process without requiring expertise to initiate the process
                 </p>
                 
             </div>
@@ -41,7 +41,7 @@ export default function CompanySection() {
                 Model for missing values using our own vast packaging database
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-10">
-                Some businesses may have limited knowledge of their own current state packaging resulting in missing data, gCurv saves our customer from having to spend resources to fill these gaps
+                Some businesses may have limited knowledge of their own current state packaging resulting in missing data, packgine saves our customer from having to spend resources to fill these gaps
                 </p> 
             </div>
         </section>
