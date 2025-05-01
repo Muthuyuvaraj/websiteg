@@ -16,7 +16,10 @@ const NavBar = () => {
   };
 
   const flatSections = [
-    { title: "Our Story", href: "/our-story" },
+    { title: "About us", href: "/our-story" },
+    { title: "The Tech", href: "/The-tech" },
+    { title: "Intersection", href: "/intersection" },
+    { title: "MOATS", href: "/moat" },
     { title: "Pricing", href: "/pricing" },
     { title: "Insights", href: "/Insights" },
   ];
@@ -30,22 +33,22 @@ const NavBar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 justify-center gap-6 xl:gap-10">
+        <div className="hidden lg:flex flex-1 justify-center gap-6 xl:gap-10 text-primary">
           {/* Our Story */}
           <Link
             href={flatSections[0].href}
-            className="font-medium hover:text-primary"
+            className="font-medium hover:text-secondary"
           >
             {flatSections[0].title}
           </Link>
 
           {/* Dropdown: Offering & Support */}
           <div className="relative group">
-            <div className="flex items-center gap-1 cursor-pointer font-medium hover:text-primary">
+            <div className="flex items-center gap-1 cursor-pointer font-medium hover:text-secondary">
               {dropdownSection.title}
               <ChevronDown size={16} />
             </div>
-            <div className="absolute left-0 mt-2 min-w-[10rem] max-w-[16rem] bg-white shadow-md rounded-md py-2 z-50 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
+            <div className="absolute left-0 mt-2 min-w-[10rem] max-w-[16rem] bg-white text-secondary shadow-md rounded-md py-2 z-50 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
               {dropdownSection.items.map(({ label, href }) => (
                 <Link
                   key={label}
@@ -131,7 +134,7 @@ const NavBar = () => {
             </Link>
           ))}
 
-          <button className="bg-primary text-white px-4 py-2 rounded-md font-medium w-full">
+          <button className="bg-secondary text-white px-4 py-2 rounded-md font-medium w-full">
             Request a Demo
           </button>
         </div>

@@ -7,43 +7,49 @@ const steps = [
     title: 'Data-Driven Insights',
     description:
       'Provide users with analytics on packaging materials, recyclability rates, regulatory compliance and consumer claims to inform decision-making, which includes goal setting targets and performance feedback',
-    image: '/images/ourstory/Datadriven.jpeg',
+    image: '/images/Data.jpg',
   },
   {
     title: 'Collaboration Tools',
     description:
       'Enable packaging designers, brands, and suppliers to connect and collaborate on sustainable packaging projects with scenario planning and improvement opportunities',
-    image: '/images/ourstory/collaboration-tools.jpeg',
+    image: '/images/collaboration.jpg',
   },
   {
     title: 'Material Library',
-    description: 'Offer a comprehensive database of sustainable materials, their properties, and environmental impact',
-    image: '/images/ourstory/Material-Library.jpeg',
+    description:
+      'Offer a comprehensive database of sustainable materials, their properties, and environmental impact',
+    image: '/images/mlib.jpg',
   },
   {
     title: 'Design Optimization',
-    description: 'Provide tools to analyze and optimize packaging designs for sustainability, considering factors like material usage, recyclability, and carbon efficiency across the product.',
-    image: '/images/ourstory/DesignOptimization.jpeg',
+    description:
+      'Provide tools to analyze and optimize packaging designs for sustainability, considering factors like material usage, recyclability, and carbon efficiency across the product.',
+    image: '/images/design.jpg',
   },
   {
     title: 'Consumer Education',
-    description: 'Include features that allow brands to communicate their sustainable packaging efforts to consumers effectively',
-    image: '/images/step5.png',
+    description:
+      'Include features that allow brands to communicate their sustainable packaging efforts to consumers effectively',
+    image: '/images/consumer.jpg',
   },
   {
     title: 'Trend Forecasting',
-    description: 'Utilize AI and machine learning to predict future trends in sustainable packaging, helping professionals stay ahead of the curve',
-    image: '/images/step6.png',
+    description:
+      'Utilize AI and machine learning to predict future trends in sustainable packaging, helping professionals stay ahead of the curve',
+    image: '/images/trend.jpg',
   },
   {
     title: 'Regulatory Compliance',
-    description: 'Offer up-to-date information on packaging regulations and sustainability standards across different markets',
-    image: '/images/step6.png',
+    description:
+      'Offer up-to-date information on packaging regulations and sustainability standards across different markets',
+    image: '/images/reg.jpg',
   },
   {
     title: 'Impact Tracking',
-    description: 'Provide tools for brands to measure and report on the environmental impact of their packaging choices',
-    image: '/images/step6.png',
+    description:
+      'Provide tools for brands to measure and report on the environmental impact of their packaging choices',
+    image: '/images/impt.jpg',
   },
 ];
 
@@ -51,11 +57,11 @@ export default function ExplainSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col md:flex-row gap-10 px-6 py-16 md:ml-28 items-center md:items-start text-center md:text-left">
+    <div className="flex flex-col md:flex-row gap-10 px-4 py-10 md:ml-28 items-center md:items-start text-center md:text-left">
       
       {/* Left Section */}
       <div className="w-full md:w-1/2">
-        <h2 className="text-2xl md:text-4xl font-medium mb-8">Value Proposition</h2>
+        <h2 className="text-2xl md:text-4xl text-primary font-medium mb-8">Value Proposition</h2>
         <div className="flex flex-col gap-6 items-center md:items-start">
           {steps.map((step, index) => (
             <div
@@ -79,7 +85,7 @@ export default function ExplainSection() {
                 </span>
                 <span
                   className={`font-medium ${
-                    activeIndex === index ? 'text-black' : 'text-gray-400'
+                    activeIndex === index ? 'text-primary' : 'text-secondary'
                   }`}
                 >
                   {step.title}
@@ -94,11 +100,11 @@ export default function ExplainSection() {
       </div>
 
       {/* Right Section */}
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center mt-6 md:mt-0">
         <img
           src={steps[activeIndex].image}
           alt={`Step ${activeIndex + 1}`}
-          className="w-[70%] sm:w-1/2 md:w-3/4 lg:w-3/5 h-auto rounded-lg shadow-md"
+          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-sm shadow-md"
         />
       </div>
     </div>
