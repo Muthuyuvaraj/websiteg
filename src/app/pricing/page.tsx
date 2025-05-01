@@ -49,8 +49,8 @@ export default function PricingPage() {
     <main className="bg-[#faf9f9] min-h-screen">
       <NavBar />
       <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-        <h2 className="text-4xl font-bold">Choose your plan</h2>
-        <p className="text-gray-500 mt-2">7 Days free trial. No credit card required.</p>
+        <h2 className="text-4xl font-bold text-primary">Choose your plan</h2>
+        <p className="text-secondary mt-2">7 Days free trial. No credit card required.</p>
 
         {/* Billing Toggle */}
         <div className="flex items-center justify-center gap-4 mt-6">
@@ -82,7 +82,7 @@ export default function PricingPage() {
                   MOST POPULAR
                 </div>
               )}
-              <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+              <h3 className="text-xl font-semibold text-primary mb-2">{plan.name}</h3>
               <div className="flex items-end mb-6">
                 <span className="text-4xl font-bold text-purple-500">
                   ${plan.price[billing]}
@@ -93,7 +93,7 @@ export default function PricingPage() {
               </div>
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-gray-700">
+                  <li key={i} className="flex items-center gap-2 text-secondary">
                     <CheckCircle className="w-5 h-5 text-purple-500" />
                     {feature}
                   </li>
