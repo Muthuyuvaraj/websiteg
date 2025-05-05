@@ -35,13 +35,13 @@ export default function IntersectionPage() {
 
       <section className="bg-gray-50 text-gray-800 py-16 px-6 flex-grow">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-primary mb-12">Intersection</h1>
+          <h1 className="text-4xl font-bold text-center text-primary mb-12"></h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
+                className="bg-slate-100 rounded-xl shadow-md p-6 hover:shadow-lg transition"
               >
                 <h2 className="text-primary text-center flex flex-col items-center justify-center">{value.title}</h2>
                 

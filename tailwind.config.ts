@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -7,6 +7,10 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+  ],
+  safelist: [
+    'peer-checked:bg-primary',
+    'peer-checked:translate-x-full',
   ],
   prefix: "",
   theme: {
@@ -19,13 +23,9 @@ const config = {
     },
     extend: {
       colors: {
-        primary: "#878787" ,
+        primary: "#878787",
         secondary: "#060606",
         third: "#7C3AED",
-      },
-      extend: {
-        backgroundColor: ['peer-checked'],
-        translate: ['peer-checked'],
       },
       inset: {
         '5': '5%',
@@ -50,10 +50,8 @@ const config = {
         '100': '100%',
       },
       height: {
-        
         '5': '5%',
         '10': '10%',
-        
         '15': '15%',
         '20': '20%',
         '25': '25%',
@@ -76,7 +74,6 @@ const config = {
       width: {
         '5': '5%',
         '10': '10%',
-        
         '15': '15%',
         '20': '20%',
         '25': '25%',
@@ -96,8 +93,8 @@ const config = {
         '95': '95%',
         '100': '100%',
       },
-      leading:{
-        leading:[1.8],
+      leading: {
+        leading: [1.8],
       },
       keyframes: {
         "accordion-down": {
@@ -108,19 +105,32 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        
+        fadeInUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fadeInUp 0.6s ease-out both",
+        'spin-slow': 'spin 10s linear infinite',
       },
-      fontSize:{
-        h1:"60px",
-        h2:"50px",
-        
-      }
+      fontSize: {
+        h1: "60px",
+        h2: "50px",
+      },
     },
   },
+  
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

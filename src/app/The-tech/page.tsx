@@ -11,7 +11,7 @@ export default function TechSection() {
     <main>
         <NavBar />
     
-    <section className="text-center py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <section className="text-center py-16 px-4 md:px-8 lg:px-16 bg-[#faf9f9]">
         
       {/* Heading */}
       <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary">
