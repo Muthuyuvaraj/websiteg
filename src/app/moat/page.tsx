@@ -52,7 +52,7 @@ export default function MoatSection() {
       <section className="bg-white py-16 px-4">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-            MOATs
+          
           </h2>
         </div>
 

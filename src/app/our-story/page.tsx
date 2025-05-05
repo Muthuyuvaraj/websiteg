@@ -63,20 +63,21 @@ export default function OurStory() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="py-24 px-6 md:px-20 text-gray-800">
-        <h1 className="text-[40px] md:text-h1 font-medium text-center text-primary mb-8">
-          Unpackaging Sustainability Potential to Empower Brands and Inspire Consumers
-        </h1>
-        <div className="max-w-4xl mx-auto space-y-8 text-lg leading-relaxed text-secondary text-center">
-          <p>
-            Packgine is a comprehensive platform that can handle complexities of sustainable packaging data while offering practical, cost-effective solutions.
-          </p>
-        </div>
-      </section>
+      <section className="pt-12 pb-16 px-4 sm:px-6 md:px-20 text-gray-800">
+  <h1 className="text-2xl sm:text-5xl md:text-4xl text-primary font-medium mt-12 text-center leading-snug sm:leading-snug mb-6">
+    Unpackaging Sustainability Potential to Empower Brands and Inspire Consumers
+  </h1>
+  <div className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed text-secondary text-center">
+    <p>
+      Packgine is a comprehensive platform that can handle complexities of sustainable packaging data while offering practical, cost-effective solutions.
+    </p>
+  </div>
+</section>
 
-      {/* Offline Video Section */}
-      <section className="h-screen flex justify-center items-center mb-40 px-4">
-        <div className="w-full max-w-5xl aspect-video rounded-lg shadow-lg overflow-hidden -mt-40">
+
+      {/* Video Section */}
+      <section className="flex justify-center items-center my-12 px-4">
+        <div className="w-full max-w-5xl aspect-video rounded-lg shadow-lg overflow-hidden">
           <video
             className="w-full h-full object-cover"
             controls
@@ -91,56 +92,42 @@ export default function OurStory() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="flex flex-col md:flex-row gap-10 px-4 py-10 md:ml-28 items-center md:items-start text-center md:text-left">
-        {/* Left Section */}
-        <div className="w-full md:w-1/2 -mt-44">
-          <h2 className="text-2xl md:text-4xl text-primary font-medium mb-8">Value Proposition</h2>
-          <div className="flex flex-col gap-6 items-center md:items-start">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`cursor-pointer border-l-4 pl-4 w-full transition-all ${
-                  activeIndex === index
-                    ? 'border-purple-500 text-black'
-                    : 'border-transparent text-gray-400'
-                }`}
-              >
-                <div className="flex items-center gap-2 justify-center md:justify-start">
-                  <span
-                    className={`text-sm w-6 h-6 rounded-full flex items-center justify-center border ${
-                      activeIndex === index
-                        ? 'bg-purple-500 text-white'
-                        : 'bg-white text-gray-400'
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <span
-                    className={`font-medium ${
-                      activeIndex === index ? 'text-primary' : 'text-secondary'
-                    }`}
-                  >
-                    {step.title}
-                  </span>
-                </div>
-                {activeIndex === index && (
-                  <p className="mt-2 text-sm text-secondary">{step.description}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="bg-[#faf9f9] py-12 md:py-20">
+  <div className="max-w-7xl mx-auto text-center mb-12 px-4 sm:px-8">
+    <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+      Value Proposition
+    </h2>
+  </div>
 
-        {/* Right Section */}
-        <div className="w-full flex justify-center items-center mt-6 md:-mt-10">
-          <img
-            src={steps[activeIndex].image}
-            alt={`Step ${activeIndex + 1}`}
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-sm shadow-md"
-          />
-        </div>
-      </section>
+  {steps.map((step, index) => (
+    <div
+      key={index}
+      className={`flex flex-col md:flex-row ${
+        index % 2 !== 0 ? 'md:flex-row-reverse' : ''
+      } items-center justify-between gap-10 px-4 sm:px-8 md:px-20 py-12`}
+    >
+      {/* Text Content */}
+      <div className="md:w-1/2 w-full text-left max-w-xl min-h-[300px] flex flex-col justify-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+          {step.title}
+        </h2>
+        <p className="text-gray-600 text-base md:text-lg leading-relaxed text-justify">
+          {step.description}
+        </p>
+      </div>
+
+      {/* Image */}
+      <div className="md:w-1/2 w-full flex justify-center">
+        <img
+          src={step.image}
+          alt={step.title}
+          className="rounded-lg w-full max-w-xl min-h-[300px] object-cover shadow-md transition-transform duration-500 ease-in-out hover:scale-105"
+        />
+      </div>
+    </div>
+  ))}
+</section>
+
 
       <Footer />
     </main>
