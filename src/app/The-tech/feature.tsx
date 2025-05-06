@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 
 const features = [
@@ -55,65 +57,60 @@ export default function FeatureRotator() {
 
     const interval = setInterval(() => {
       setSelected((prev) => (prev + 1) % features.length);
-      setRotationAngle((prevAngle) => prevAngle + 360); // Increment rotation angle by 360
-    }, 10000); // Change every 10 seconds
+      setRotationAngle((prevAngle) => prevAngle + 360);
+    }, 10000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  const handleNavbarClick = (index: React.SetStateAction<number>) => {
+  const handleNavbarClick = (index: number) => {
     setSelected(index);
-    setRotationAngle((prevAngle) => prevAngle + 360); // Rotate on click
-    setIsPaused(true); // Pause rotation when user clicks a navbar item
+    setRotationAngle((prevAngle) => prevAngle + 360);
+    setIsPaused(true);
   };
 
   const handleNavbarHover = () => {
-    setIsPaused(false); // Resume rotation when hovering
+    setIsPaused(false);
   };
 
   return (
     <section className="py-20 px-4 sm:px-8 md:px-20 bg-[#faf9f9] text-gray-800">
       <div className="flex flex-col-reverse md:flex-row items-center gap-12 max-w-7xl mx-auto">
         {/* Description Section */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary mb-4"
-          >
+        <div className="md:w-[40%] w-full min-h-[300px] text-left flex flex-col justify-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary mb-4">
             {features[selected].title}
           </h2>
-          <p className="text-gray-600 text-base md:text-lg mb-6">
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
             {features[selected].image.description}
           </p>
         </div>
 
         {/* Image Section with Circular Background */}
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-[60%] flex justify-center">
           <div
-            className="relative w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] aspect-[1/1] rounded-full overflow-hidden shadow-xl"
-            style={{
-            
-            }}
+            className="relative w-[300px] sm:w-[400px] md:w-[500px] aspect-[1/1] rounded-full overflow-hidden shadow-xl"
           >
             {/* Circular Background Layer */}
-            <div className="absolute inset-0 rounded-full bg-gray-100"></div> {/* Background Circle */}
+            <div className="absolute inset-0 rounded-full bg-gray-100"></div>
 
-            {/* Circular Purple Border (Slower Rotation) */}
+            {/* Circular Purple Border */}
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-purple-400 animate-spin-slow"></div>
 
-            {/* Image Inside Circle */}
+            {/* Image */}
             <div className="absolute inset-0 flex items-center justify-center">
               <img
                 src={features[selected].image.src}
                 alt={features[selected].image.description}
-                className="object-contain w-[90%] h-[100%] rounded-full"
+                className="object-contain w-[95%] h-[95%] rounded-full"
               />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navbar with Headings */}
+      {/* Navbar with Rectangular Buttons */}
       <div
-        className="flex flex-wrap gap-2 justify-center md:justify-center mt-8 cursor-pointer"
+        className="flex flex-wrap gap-3 justify-center mt-12 cursor-pointer"
         onMouseEnter={handleNavbarHover}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -121,8 +118,10 @@ export default function FeatureRotator() {
           <button
             key={index}
             onClick={() => handleNavbarClick(index)}
-            className={`px-4 py-2 rounded-full border text-sm font-medium transition-colors duration-300 ${
-              selected === index ? 'bg-purple-400 text-white' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+            className={`px-5 py-3 rounded-md border text-sm font-medium transition-colors duration-300 ${
+              selected === index
+                ? 'bg-purple-400 text-white border-purple-400'
+                : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
             }`}
           >
             {item.title.trim()}

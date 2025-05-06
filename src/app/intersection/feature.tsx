@@ -36,7 +36,7 @@ export default function IntersectionFeaturesSection() {
     <section className="bg-white py-16 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-primary">
           Packgine is reimagining, and at pole position for this revolution –{' '}
           <span className="text-purple-600">A True Survival grade Software!</span>
         </h2>
@@ -66,7 +66,7 @@ export default function IntersectionFeaturesSection() {
                   <div className="flex justify-center mb-4">
                     <Icon className="w-10 h-10 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  <h3 className="text-lg font-semibold text-primary mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-gray-600">{feature.description}</p>

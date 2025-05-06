@@ -64,9 +64,11 @@ export default function OurStory() {
 
       {/* Hero Section */}
       <section className="pt-12 pb-16 px-4 sm:px-6 md:px-20 text-gray-800">
-  <h1 className="text-2xl sm:text-5xl md:text-4xl text-primary font-medium mt-12 text-center leading-snug sm:leading-snug mb-6">
-    Unpackaging Sustainability Potential to Empower Brands and Inspire Consumers
-  </h1>
+      <h1 className="text-2xl sm:text-5xl md:text-4xl text-primary font-semibold mt-12 text-center leading-snug sm:leading-snug mb-6">
+  Unpackaging Sustainability Potential 
+  to Empower Brands and Inspire Consumers
+</h1>
+
   <div className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed text-secondary text-center">
     <p>
       Packgine is a comprehensive platform that can handle complexities of sustainable packaging data while offering practical, cost-effective solutions.
@@ -92,42 +94,43 @@ export default function OurStory() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="bg-[#faf9f9] py-12 md:py-20">
-  <div className="max-w-7xl mx-auto text-center mb-12 px-4 sm:px-8">
-    <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-      Value Proposition
-    </h2>
-  </div>
-
-  {steps.map((step, index) => (
-    <div
-      key={index}
-      className={`flex flex-col md:flex-row ${
-        index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-      } items-center justify-between gap-10 px-4 sm:px-8 md:px-20 py-12`}
-    >
-      {/* Text Content */}
-      <div className="md:w-1/2 w-full text-left max-w-xl min-h-[300px] flex flex-col justify-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-          {step.title}
+      <section className="bg-[#faf9f9] py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-20">
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-16">
+          Value Proposition
         </h2>
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed text-justify">
-          {step.description}
-        </p>
-      </div>
 
-      {/* Image */}
-      <div className="md:w-1/2 w-full flex justify-center">
-        <img
-          src={step.image}
-          alt={step.title}
-          className="rounded-lg w-full max-w-xl min-h-[300px] object-cover shadow-md transition-transform duration-500 ease-in-out hover:scale-105"
-        />
-      </div>
-    </div>
-  ))}
-</section>
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center mb-20"
+          >
+            {/* Text Content */}
+            <div
+              className={`order-1 md:col-span-6 ${
+                index % 2 === 0 ? 'md:order-1' : 'md:order-2'
+              }`}
+            >
+              <h3 className="text-2xl font-semibold text-primary mb-4">{step.title}</h3>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+                {step.description}
+              </p>
+            </div>
 
+            {/* Image */}
+            <div
+              className={`order-2 md:col-span-6 ${
+                index % 2 === 0 ? 'md:order-2' : 'md:order-1'
+              }`}
+            >
+              <img
+                src={step.image}
+                alt={step.title}
+                className="rounded-lg w-full max-w-md mx-auto object-cover shadow-lg transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+            </div>
+          </div>
+        ))}
+      </section>
 
       <Footer />
     </main>
