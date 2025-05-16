@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left section - Branding */}
         <div className="flex justify-start">
-          <div className="font-bold text-4xl mb-9 mt-2 ">Packgine</div>
+          <div className="font-bold text-4xl mb-5 mt-12 ">Packgine</div>
         </div>
 
         {/* Middle - Company Links in 2 rows, 4 columns */}
