@@ -66,18 +66,19 @@ export default function OurStory() {
             <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden">
               <button
                 onClick={() => setShowVideo(false)}
-                className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-400 transition"
+                className="absolute top-4 right-7 text-black text-4xl font-bold hover:text-red-400 transition"
               >
                 &times;
               </button>
               <iframe
-                className="w-full h-full"
-                src="/videos/Packgine.mp4"
-                title="Discover Packgine"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+  className="w-full h-full"
+  src="/videos/paackgine.mp4"
+  title="Discover Packgine"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
             </div>
           </div>
         )}
