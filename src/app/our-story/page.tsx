@@ -8,25 +8,25 @@ const steps = [
   {
     title: 'Instant Packaging Analytics',
     description:
-      'Packgine provides an AI-powered platform that enables users to conduct instant lifecycle analysis of packaging materials. This includes evaluating recyclability, carbon footprint, and reuse potential, allowing businesses to make informed decisions that support sustainability goals.',
+      'Our Plaform provides an AI-powered platform that enables users to conduct instant lifecycle analysis of packaging materials. This includes evaluating recyclability, carbon footprint, and reuse potential, allowing businesses to make informed decisions that support sustainability goals.',
     image: '/images/Instant-Packaging-Analytics.jpg',
   },
   {
     title: 'Portfolio Optimization',
     description:
-      'With Packgine, companies can optimize their packaging portfolios by replacing high-impact materials with more sustainable options. The platform ensures that cost control is maintained while transitioning to greener alternatives, enabling a balance between environmental responsibility and financial viability.',
+      'Companies can optimize their packaging portfolios by replacing high-impact materials with more sustainable options. The platform ensures that cost control is maintained while transitioning to greener alternatives, enabling a balance between environmental responsibility and financial viability.',
     image: '/images/Portfolio-Optimization.jpg',
   },
   {
     title: 'Material Library',
     description:
-      'Packgine offers a comprehensive and continuously updated database of sustainable packaging materials. This includes detailed information on each material’s physical properties, sourcing methods, recyclability, carbon footprint, and overall environmental impact. Brands can easily compare options to make informed decisions that align with both performance requirements and sustainability goals.',
+      'We offer a comprehensive and continuously updated database of sustainable packaging materials. This includes detailed information on each material’s physical properties, sourcing methods, recyclability, carbon footprint, and overall environmental impact. Brands can easily compare options to make informed decisions that align with both performance requirements and sustainability goals.',
     image: '/images/Material-Library.jpg',
   },
   {
     title: 'Automated Compliance',
     description:
-      'Packgine automates compliance with evolving packaging laws across more than 50 markets. This ensures that businesses stay ahead of regulatory changes, minimizing the risk of non-compliance while enhancing brand credibility and trust.',
+      'Compliance automation is dynamic, and based on evolving packaging laws across more than 50 markets. This ensures that businesses stay ahead of regulatory changes, minimizing the risk of non-compliance while enhancing brand credibility and trust.',
     image: '/images/Automated-Compliance.jpg',
   },
 ];
