@@ -20,7 +20,7 @@ const steps = [
   {
     title: 'Material Library',
     description:
-      'We offer a comprehensive and continuously updated database of sustainable packaging materials. This includes detailed information on each material’s physical properties, sourcing methods, recyclability, carbon footprint, and overall environmental impact. Brands can easily compare options to make informed decisions that align with both performance requirements and sustainability goals.',
+      'Packgine offers a comprehensive and continuously updated database of sustainable packaging materials. This includes detailed information on each material’s physical properties, sourcing methods, recyclability, carbon footprint, and overall environmental impact. Brands can easily compare options to make informed decisions that align with both performance requirements and sustainability goals.',
     image: '/images/Material-Library.jpg',
   },
   {
