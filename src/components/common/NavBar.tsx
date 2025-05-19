@@ -20,8 +20,6 @@ const NavBar = () => {
   const flatLinks = [
     { label: "Features ", href: "/The-tech" },
     { label: "Benefits", href: "/moat" },
-    { label: "Analytics", href: "/product/analytics" },
-    { label: "Security", href: "/product/security" },
     { label: "Pricing", href: "/pricing" },
   ];
 
