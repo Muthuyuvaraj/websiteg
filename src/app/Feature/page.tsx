@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import Image from "next/image";
 import Footer from "@/components/common/FooterSection";
 import NavBar from "@/components/common/NavBar";
@@ -76,7 +76,7 @@ const AgentCloud = ({ agent }: any) => {
           />
         </div>
         <div className="mt-2 flex space-x-2">
-          {agent.images.map((_, i) => (
+          {agent.images.map((_: any, i: Key | null | undefined) => (
             <div
               key={i}
               className={`w-2 h-2 rounded-full ${
