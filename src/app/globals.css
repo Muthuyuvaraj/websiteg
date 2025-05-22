@@ -1,3 +1,110 @@
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* app/globals.css */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Clouds */
+/* MAIN CLOUD: Increased size and adjusted shadows */
+.thinking-cloud .main-cloud {
+  width: 180px;
+  height: 150px;
+  background-color: #eaebec;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow:
+    -60px 0 0 #eaebec,
+    60px 0 0 #eaebec,
+    30px -45px 0 #eaebec,
+    -30px -45px 0 #eaebec;
+}
+
+/* POSITIONING MAIN CLOUDS */
+.thinking-cloud.left-cloud.top-cloud .main-cloud {
+  top: 80px;
+  left: 300px;
+}
+.thinking-cloud.right-cloud.top-cloud .main-cloud {
+  top: 80px;
+  right: 240px;
+}
+.thinking-cloud.left-cloud.bottom-cloud .main-cloud {
+  top: 100px;
+  left: 260px;
+ 
+  
+}
+.thinking-cloud.right-cloud.bottom-cloud .main-cloud {
+  top: 90px;
+  right: 240px;
+}
+
+/* SMALL CLOUDS: Increased size and spacing */
+.thinking-cloud .small-cloud {
+  background-color: #eaebec;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.thinking-cloud.left-cloud.top-cloud .small-cloud.one {
+  width: 45px;
+  height: 45px;
+  top: 200px;
+  left: 520px;
+}
+.thinking-cloud.left-cloud.top-cloud .small-cloud.two {
+  width: 28px;
+  height: 28px;
+  top: 240px;
+  left: 570px;
+}
+.thinking-cloud.right-cloud.top-cloud .small-cloud.one {
+  width: 45px;
+  height: 45px;
+  top: 200px;
+  right: 480px;
+}
+.thinking-cloud.right-cloud.top-cloud .small-cloud.two {
+  width: 28px;
+  height: 28px;
+  top: 240px;
+  right: 530px;
+}
+.thinking-cloud.left-cloud.bottom-cloud .small-cloud.one {
+  width: 45px;
+  height: 45px;
+  top: 10px;
+  left: 450px;
+}
+.thinking-cloud.left-cloud.bottom-cloud .small-cloud.two {
+  width: 28px;
+  height: 28px;
+  top: -20px;
+  left: 500px;
+}
+.thinking-cloud.right-cloud.bottom-cloud .small-cloud.one {
+  width: 45px;
+  height: 45px;
+  top: 40px;
+  right: 450px;
+}
+.thinking-cloud.right-cloud.bottom-cloud .small-cloud.two {
+  width: 28px;
+  height: 28px;
+  top: 10px;
+  right: 510px;
+}
+
+/* TEXT STAYS THE SAME */
+.thinking-cloud-text {
+  position: absolute;
+  width: 180px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}

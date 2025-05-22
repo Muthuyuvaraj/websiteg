@@ -105,7 +105,6 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        
         fadeInUp: {
           "0%": {
             opacity: "0",
@@ -127,9 +126,11 @@ const config = {
         h1: "60px",
         h2: "50px",
       },
+      fontFamily: {
+        sans: ['var(--font-dm-sans)', 'sans-serif'],
+      },
     },
   },
-  
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 

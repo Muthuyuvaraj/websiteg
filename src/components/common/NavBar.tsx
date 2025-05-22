@@ -8,7 +8,7 @@ const NavBar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const dropdownSection = {
-    title: "Company",
+    title: "Company",   
     items: [
       { label: "About Us", href: "/company/about" },
       { label: "Careers", href: "/company/careers" },
@@ -18,7 +18,7 @@ const NavBar = () => {
   };
 
   const flatLinks = [
-    { label: "Features ", href: "/The-tech" },
+    { label: "Features ", href: "/Feature" },
     { label: "Benefits", href: "/moat" },
     { label: "Pricing", href: "/pricing" },
   ];
