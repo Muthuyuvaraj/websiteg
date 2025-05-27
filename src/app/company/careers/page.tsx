@@ -52,7 +52,7 @@ export default function CareerPage() {
         {/* Resume Submission */}
         <div className="text-center">
           <p className="text-md text-gray-600 mb-4">
-            Please send your resume / CV or connect with us through the button below.
+            Please send your resume internal@gcurv.com / CV or connect with us through the button below.
           </p>
           <Link href="/contact">
             <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-medium transition">
