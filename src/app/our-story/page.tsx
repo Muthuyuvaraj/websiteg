@@ -71,7 +71,7 @@ export default function OurStory() {
                 &times;
               </button>
               <video className="w-full h-full" controls autoPlay>
-                <source src="/videos/packgine.mp4" type="video/mp4" />
+                <source src="/video/packgine.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

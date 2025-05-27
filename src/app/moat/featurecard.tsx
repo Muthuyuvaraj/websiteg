@@ -22,7 +22,10 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
 
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 w-full max-w-md mx-auto">
-      <h3 className="text-xl font-semibold text-center text-gray-800 mb-4">{feature.title}</h3>
+      <h3 className="text-xl font-semibold text-center text-gray-800 mb-4">
+        {feature.title}
+      </h3>
+
       <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
         <Image
           src={feature.images[index]}
@@ -31,10 +34,11 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
           className="object-cover"
         />
       </div>
+
       <ul className="space-y-2">
         {feature.desc.map((point, idx) => (
-          <li key={idx} className="flex items-start text-gray-700">
-            <Check size={18} className="text-black mt-1 mr-2" />
+          <li key={idx} className="flex items-center text-gray-700">
+            <Check size={14} className="text-black flex-shrink-0 mt-px mr-2" />
             <span>{point}</span>
           </li>
         ))}

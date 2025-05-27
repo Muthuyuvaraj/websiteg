@@ -64,9 +64,11 @@ const NavBar = () => {
           </div>
 
           {/* Request a Demo Button */}
-          <button className="bg-purple-500 hover:bg-purple-600 text-white px-4 xl:px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition">
-            Request a Demo
-          </button>
+          <Link href="/request">
+  <button className="bg-purple-500 hover:bg-purple-600 text-white px-4 xl:px-6 py-2 rounded-md font-medium transition">
+    Request a Demo
+  </button>
+</Link>
         </div>
 
         {/* Mobile Menu Toggle */}
