@@ -12,7 +12,6 @@ const NavBar = () => {
     items: [
       { label: "About Us", href: "/company/about" },
       { label: "Careers", href: "/company/careers" },
-      { label: "Blog", href: "/company/blog" },
       { label: "Contact", href: "/company/contact" },
     ],
   };
