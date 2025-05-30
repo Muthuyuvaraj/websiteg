@@ -51,9 +51,17 @@ export default function CareerPage() {
 
         {/* Resume Submission */}
         <div className="text-center">
-          <p className="text-md text-gray-600 mb-4">
-            Please send your resume internal@gcurv.com / CV or connect with us through the button below.
-          </p>
+  <p className="text-md text-gray-600 mb-4">
+  Please send your resume to{" "}
+  <a
+    href="mailto:internal@mail.com?subject=Resume%20Submission"
+    className="text-purple-400 underline hover:text-purple-600"
+  >
+    internal@mail.com
+  </a>{" "}
+  or connect with us through the button below.
+</p>
+
           <Link href="/contact">
             <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-medium transition">
               Submit Resume

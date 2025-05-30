@@ -108,3 +108,45 @@ body {
   color: #333;
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .main-cloud {
+    width: 120px !important;
+    height: 100px !important;
+    box-shadow:
+      -40px 0 0 #eaebec,
+      40px 0 0 #eaebec,
+      20px -30px 0 #eaebec,
+      -20px -30px 0 #eaebec;
+  }
+
+  .small-cloud.one {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .small-cloud.two {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .thinking-cloud-text {
+    font-size: 12px !important;
+    width: 140px !important;
+  }
+}
+
+
+/* tailwind globals */
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
