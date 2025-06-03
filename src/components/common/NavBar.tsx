@@ -18,7 +18,7 @@ const NavBar = () => {
 
   const flatLinks = [
     { label: "Features ", href: "/Feature" },
-    { label: "Benefits", href: "/moat" },
+    { label: "Benefits", href: "/Benefits" },
     { label: "Pricing", href: "/pricing" },
   ];
 

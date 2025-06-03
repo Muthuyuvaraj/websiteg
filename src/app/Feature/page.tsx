@@ -15,19 +15,19 @@ import {
 const cards = [
   {
     id: 1,
-    question: "How Material recyclability scoring is Analysed?",
+    question: "Recyclability analysis",
     images: ["/images/top-left1.jpg", "/images/top-left2.jpg"],
     icon: <Recycle className="w-8 h-8 text-purple-400 mb-4" />,
   },
   {
     id: 2,
-    question: "What are Packaging portfolio heatmaps?",
+    question: "Comphrensive Packaging Dashboards",
     images: ["/images/top-right.jpg", "/images/Packaging-porfolio -heatmaps-image-2.png"],
     icon: <BarChart3 className="w-8 h-8 text-purple-400 mb-4" />,
   },
   {
     id: 3,
-    question: "How does component scenario planner work?",
+    question: "Scenario Planning",
     images: ["/images/bottom-left.jpg", "/images/component-scenario-planner-work-2.png"],
     icon: <Settings className="w-8 h-8 text-purple-400 mb-4" />,
   },
@@ -50,7 +50,7 @@ const FlipCard = ({ card, isFlipped, onFlip }: any) => {
         {/* Front  bg-white rounded-xl */}
         <div className="absolute w-90 h-80 bg-purple-100 border border-purple-300 shadow-md hover:shadow-lg  text-white rounded-xl flex flex-col items-center justify-center text-center text-2xl font-semibold p-6 backface-hidden">
           {card.icon}
-          <span className="text-black">{card.question}</span>
+          <h1 className="text-black">{card.question}</h1>
         </div>
 
         {/* Back */}

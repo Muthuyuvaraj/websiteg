@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
+import { Mulish } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   },
 }
 
-const dmSans = DM_Sans({
+const mulish = Mulish({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-dm-sans',
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
+  variable: '--font-mulish',
   display: 'swap',
 })
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html lang="en" className={mulish.variable}>
       <body className="font-sans">{children}</body>
     </html>
   )

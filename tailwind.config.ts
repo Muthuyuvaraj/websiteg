@@ -127,7 +127,7 @@ const config = {
         h2: "50px",
       },
       fontFamily: {
-        sans: ['var(--font-dm-sans)', 'sans-serif'],
+        sans: ['var(--font-mulish)', 'sans-serif'],
       },
     },
   },

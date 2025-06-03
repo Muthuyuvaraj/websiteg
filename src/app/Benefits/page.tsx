@@ -56,15 +56,6 @@ const features = [
       "Includes targeted training sessions",
     ],
   },
-  {
-    title: "Engagement & Support",
-    images: ["/images/Tech-support-meet.jpg",],
-    desc: [
-      "For users to feel confident  & capable with the platform usage, continuous encouragement & support are provided. ",
-      "Our Priority is to foster long-term user satisfaction and positive relationship.",
-      "Hence, we have regular check-ins, feedback sessions & easy access to support teams ",
-    ],
-  },
 ];
 
 export default function FeatureGrid() {
